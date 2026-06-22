@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+/* ============================================================
+   SITE-B — STYLESHEET CONSOLIDADO
+   Ordem: Reset → Variáveis → Base → Header/Nav → Hero →
+          Produtos → Carrossel → Sobre → Footer
+   ============================================================ */
+
+
+/* ============================================================
+   1. RESET
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: 0px;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar { width: 0; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: transparent; border: none; }
+
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ============================================================
+   2. VARIÁVEIS (root.css)
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --color-primary:        #0D3B66;
+  --color-secondary:      #F4D35E;
+  --color-background:     #FAF0CA;
+  --color-text:           #0D3B66;
+  --color-text-muted:     #0D3B66;
+  --color-border:         #0D3B66;
+  --color-border-subtle:  rgba(0, 0, 0, 0.15);
+  --color-h2-product:     #E3170A;
+
+  /* Typography */
+  --font-family-heading: 'Chango', cursive;
+  --font-family-body:    'Lilita One', cursive;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+
+/* ============================================================
+   3. BASE / BODY (style.css + header-nav.css)
+   ============================================================ */
+
+body {
+  font-family: var(--font-family-body);
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  padding-top: 130px; /* espaço para o header fixo (logo ~76px + nav ~54px) */
+}
+
+/* Grid layout helper (style.css) */
+#cssportal-grid {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#div1 {
+  grid-area: 1 / 1 / 5 / 2;
+  background-color: rgba(193, 72, 109, 0.5);
+  background-image: url('.../images/teste-roupa.webp');
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+#div1-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ============================================================
+   4. HEADER & NAVEGAÇÃO (header-nav.css)
+   ============================================================ */
+
+.site-header {
+  background-color: var(--color-primary);
+  border-bottom: 1px solid var(--color-secondary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* empilha: topo (logo + busca) e nav abaixo */
+}
+
+/* Linha de cima: logo à esquerda, busca à direita */
+.site-header-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  gap: 16px;
+}
+
+.pagetitle {
+  display: flex;
+  align-items: center;
+  padding: inherit;
+}
+
+.pagetitle h1 {
+  font-family: var(--font-family-heading);
+  font-size: 52px;
+  letter-spacing: 6px;
+  color: var(--color-secondary);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.pagetitle h1:hover {
+  cursor: pointer;
+  animation: pulse-grow var(--hover-duration, 0.5s) ease;
+}
+
+/* Grupo de busca: texto + input + botão na mesma linha */
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-secondary);
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+#search-input {
+  border: 2px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  background: var(--color-background);
+  color: var(--color-primary);
+  width: 180px;
+}
+
+/* Botão genérico */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: var(--color-primary);
+  background: var(--color-secondary);
+  border-radius: 8px;
+  border: none;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 11px;
+  height: 11px;
+  fill: var(--color-primary);
+}
+
+.btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  animation: pulse-grow var(--hover-duration, 0.5s) ease;
+}
+/* Navegação */
+.gen-nav {
+  position: static;
+  display: flex;
+  align-items: center;
+  background: var(--color-primary);
+  min-height: 54px;
+  box-shadow: none;
+  padding: 0 20px; /* mesmo padding lateral do site-header-inner */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gen-nav ul {
+  list-style: none;
+}
+
+.gen-nav > ul {
+  display: flex;
+  justify-content: flex-start; /* alinha os itens à esquerda, igual ao logo */
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.gen-nav > ul > li {
+  position: relative;
+}
+
+.gen-nav > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 17px;
+  height: 54px;
+  color: var(--color-secondary);
+  font-family: var(--font-family-body);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.gen-nav > ul > li > a:hover,
+.gen-nav > ul > li:hover > a {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.gen-arrow {
+  font-size: 0.7em;
+  opacity: 0.9;
+}
+
+/* Dropdown */
+.gen-nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-primary);
+  min-width: 170px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+}
+
+.gen-nav > ul > li:hover > ul {
+  display: block;
+}
+
+.gen-nav > ul > li > ul > li > a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--color-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.gen-nav > ul > li > ul > li > a:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+

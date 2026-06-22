@@ -1,0 +1,613 @@
+@charset "UTF-8";
+
+/* ============================================================
+   SITE-B — STYLESHEET CONSOLIDADO
+   Ordem: Reset → Variáveis → Base → Header/Nav → Hero →
+          Produtos → Carrossel → Sobre → Footer
+   ============================================================ */
+
+
+/* ============================================================
+   1. RESET
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: 0px;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar { width: 0; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: transparent; border: none; }
+
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ============================================================
+   2. VARIÁVEIS (root.css)
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --color-primary:        #0D3B66;
+  --color-secondary:      #F4D35E;
+  --color-background:     #FAF0CA;
+  --color-text:           #0D3B66;
+  --color-text-muted:     #0D3B66;
+  --color-border:         #0D3B66;
+  --color-border-subtle:  rgba(0, 0, 0, 0.15);
+  --color-h2-product:     #E3170A;
+
+  /* Typography */
+  --font-family-heading: 'Chango', cursive;
+  --font-family-body:    'Lilita One', cursive;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+
+/* ============================================================
+   3. BASE / BODY (style.css + header-nav.css)
+   ============================================================ */
+
+body {
+  font-family: var(--font-family-body);
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  padding-top: 130px; /* espaço para o header fixo (logo ~76px + nav ~54px) */
+}
+
+/* Grid layout helper (style.css) */
+#cssportal-grid {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#div1 {
+  grid-area: 1 / 1 / 5 / 2;
+  background-color: rgba(193, 72, 109, 0.5);
+  background-image: url('.../images/teste-roupa.webp');
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+#div1-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ============================================================
+   4. HEADER & NAVEGAÇÃO (header-nav.css)
+   ============================================================ */
+
+.site-header {
+  background-color: var(--color-primary);
+  border-bottom: 1px solid var(--color-secondary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* empilha: topo (logo + busca) e nav abaixo */
+}
+
+/* Linha de cima: logo à esquerda, busca à direita */
+.site-header-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  gap: 16px;
+}
+
+.pagetitle {
+  display: flex;
+  align-items: center;
+  padding: inherit;
+}
+
+.pagetitle h1 {
+  font-family: var(--font-family-heading);
+  font-size: 52px;
+  letter-spacing: 6px;
+  color: var(--color-secondary);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.pagetitle h1:hover {
+  cursor: pointer;
+  animation: pulse-grow var(--hover-duration, 0.5s) ease;
+}
+
+/* Grupo de busca: texto + input + botão na mesma linha */
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-secondary);
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+#search-input {
+  border: 2px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  background: var(--color-background);
+  color: var(--color-primary);
+  width: 180px;
+}
+
+/* Botão genérico */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: var(--color-primary);
+  background: var(--color-secondary);
+  border-radius: 8px;
+  border: none;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 11px;
+  height: 11px;
+  fill: var(--color-primary);
+}
+
+.btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  animation: pulse-grow var(--hover-duration, 0.5s) ease;
+}
+
+/* Navegação */
+.gen-nav {
+  position: static;
+  display: flex;
+  align-items: center;
+  background: var(--color-primary);
+  min-height: 54px;
+  box-shadow: none;
+  padding: 0 20px; /* mesmo padding lateral do site-header-inner */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gen-nav ul {
+  list-style: none;
+}
+
+.gen-nav > ul {
+  display: flex;
+  justify-content: flex-start; /* alinha os itens à esquerda, igual ao logo */
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.gen-nav > ul > li {
+  position: relative;
+}
+
+.gen-nav > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 17px;
+  height: 54px;
+  color: var(--color-secondary);
+  font-family: var(--font-family-body);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.gen-nav > ul > li > a:hover,
+.gen-nav > ul > li:hover > a {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.gen-arrow {
+  font-size: 0.7em;
+  opacity: 0.9;
+}
+
+/* Dropdown */
+.gen-nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-primary);
+  min-width: 170px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+}
+
+.gen-nav > ul > li:hover > ul {
+  display: block;
+}
+
+.gen-nav > ul > li > ul > li > a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--color-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.gen-nav > ul > li > ul > li > a:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+
+
+
+/* ============================================================
+   5. LAYOUT PRINCIPAL (products.css)
+   ============================================================ */
+
+.page-main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+
+/* ============================================================
+   6. HERO (products.css)
+   ============================================================ */
+
+.hero {
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px 28px;
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  margin-bottom: 40px;
+}
+
+.hero-text h2 {
+  font-family: var(--font-family-body);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: var(--color-primary);
+  letter-spacing: 4px;
+  line-height: 1rem;
+  margin-bottom: 5px;
+  background-image: linear-gradient(0deg, #F6BB2680 0.5em, transparent 0.5em);
+}
+
+
+/* ============================================================
+   7. SEÇÃO E GRID DE PRODUTOS (products.css)
+   ============================================================ */
+
+.product-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--color-background);
+  padding: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.product-header h2 {
+  font-family: var(--font-family-body);
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+  padding: 40px 20px 20px 20px;
+}
+
+.product-header p {
+  color: var(--color-primary);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.product-image {
+  height: 180px;
+  background: var(--color-background);
+}
+
+.product-image--pink,
+.product-image--green,
+.product-image--yellow,
+.product-image--blue,
+.product-image--purple {
+  background: var(--color-background);
+}
+
+.product-info {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.product-size {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.product-price {
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.product-button {
+  margin-top: 10px;
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.product-button:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: inherit;
+  font-weight: 600;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.product-button:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+
+
+/* ============================================================
+   8. GRID DE IMAGENS (brechó)
+   ============================================================ */
+
+/* Wrapper: grid de roupas + sidebar sobre */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 240px; /* roupas ocupam o espaço, sobre fica fixo à direita */
+  align-items: start;
+  gap: 0;
+}
+
+.clothes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 24px 16px;
+}
+
+.clothes-grid__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-background);
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clothes-grid__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.clothes-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.clothes-grid__item:hover img {
+  transform: scale(1.04);
+}
+
+.clothes-grid__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(13, 59, 102, 0.82));
+  color: var(--color-secondary);
+  font-family: var(--font-family-body);
+  font-size: 0.9rem;
+  padding: 20px 12px 10px;
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+
+.clothes-grid__item:hover .clothes-grid__caption {
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   9. SOBRE A LOJA — sidebar direita
+   ============================================================ */
+
+.store-about {
+  background-color: rgba(244, 211, 94, 0.5);
+  color: var(--color-primary);
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* cola no topo e acompanha o scroll */
+  position: sticky;
+  top: 130px; /* altura do header fixo */
+  align-self: start;
+  min-height: calc(100vh - 130px);
+  border-left: 2px solid rgba(244, 211, 94, 0.6);
+}
+
+.store-about p {
+  font-size: 16px;
+  text-align: left;
+}
+
+
+/* ============================================================
+   10. FOOTER (footer.css)
+   ============================================================ */
+
+.fa-whatsapp,
+.fa-instagram {
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.fa-instagram a {
+  text-decoration: none;
+}
+
+
+/* ============================================================
+   11. ANIMAÇÕES
+   ============================================================ */
+
+@keyframes pulse-grow {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.1); }
+}
+
+
+
+/* ============================================================
+   12. RESPONSIVO
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .page-main {
+    padding-inline: 16px;
+  }
+
+  .hero {
+    padding-inline: 16px;
+  }
+
+  .product-section {
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em mobile: sidebar vai pra baixo do grid */
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .store-about {
+    position: static;
+    min-height: auto;
+    border-left: none;
+    border-top: 2px solid rgba(244, 211, 94, 0.6);
+  }
+
+  /* Grid de roupas: 2 colunas fixas em mobile */
+  .clothes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 16px 8px;
+  }
+}
