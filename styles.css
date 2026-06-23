@@ -79,32 +79,6 @@ body {
   padding-top: 130px; /* espaço para o header fixo (logo ~76px + nav ~54px) */
 }
 
-/* Grid layout helper (style.css) */
-#cssportal-grid {
-  display: grid;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#div1 {
-  grid-area: 1 / 1 / 5 / 2;
-  background-color: rgba(193, 72, 109, 0.5);
-  background-image: url('.../images/teste-roupa.webp');
-  width: 100%;
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-}
-
-#div1-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 
 /* ============================================================
@@ -138,7 +112,7 @@ body {
 .pagetitle {
   display: flex;
   align-items: center;
-  padding: inherit;
+  padding: 0;
 }
 
 .pagetitle h1 {
@@ -301,165 +275,12 @@ body {
 
 
 
-/* ============================================================
-   5. LAYOUT PRINCIPAL (products.css)
-   ============================================================ */
-
-.page-main {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 32px 20px 56px;
-}
-
-
-/* ============================================================
-   6. HERO (products.css)
-   ============================================================ */
-
-.hero {
-  background: var(--color-background);
-  border-radius: var(--radius-lg);
-  padding: 24px 20px 28px;
-  border: 1px solid var(--color-primary);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  margin-bottom: 40px;
-}
-
-.hero-text h2 {
-  font-family: var(--font-family-body);
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  color: var(--color-primary);
-  letter-spacing: 4px;
-  line-height: 1rem;
-  margin-bottom: 5px;
-  background-image: linear-gradient(0deg, #F6BB2680 0.5em, transparent 0.5em);
-}
-
-
-/* ============================================================
-   7. SEÇÃO E GRID DE PRODUTOS (products.css)
-   ============================================================ */
-
-.product-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background: var(--color-background);
-  padding: 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-.product-header h2 {
-  font-family: var(--font-family-body);
-  font-size: 2.4rem;
-  margin-bottom: 6px;
-  padding: 40px 20px 20px 20px;
-}
-
-.product-header p {
-  color: var(--color-primary);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  background: var(--color-background);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-primary);
-  box-shadow: none;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-  border-color: rgba(0, 0, 0, 0.35);
-}
-
-.product-image {
-  height: 180px;
-  background: var(--color-background);
-}
-
-.product-image--pink,
-.product-image--green,
-.product-image--yellow,
-.product-image--blue,
-.product-image--purple {
-  background: var(--color-background);
-}
-
-.product-info {
-  padding: 14px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.product-title {
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
-.product-size {
-  font-size: 0.9rem;
-  color: var(--color-primary);
-}
-
-.product-price {
-  font-weight: 700;
-  margin-top: 6px;
-}
-
-.product-button {
-  margin-top: 10px;
-  align-self: flex-start;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--color-primary);
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  font-family: inherit;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.product-button:hover {
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  font-family: inherit;
-  font-weight: 600;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.product-button:focus-visible {
-  outline: 3px solid var(--color-secondary);
-  outline-offset: 2px;
-}
 
 
 
 /* ============================================================
    8. GRID DE IMAGENS (brechó)
    ============================================================ */
-
-/* Wrapper: grid de roupas + sidebar sobre */
-.main-layout {
-  display: grid;
-  grid-template-columns: 1fr 240px; /* roupas ocupam o espaço, sobre fica fixo à direita */
-  align-items: start;
-  gap: 0;
-}
 
 .clothes-grid {
   display: grid;
@@ -516,30 +337,21 @@ body {
 
 
 /* ============================================================
-   9. SOBRE A LOJA — sidebar direita
+   9. BIO — faixa entre header e grid
    ============================================================ */
 
-.store-about {
-  background-color: rgba(244, 211, 94, 0.5);
-  color: var(--color-primary);
-  font-family: var(--font-family-body);
-  font-size: 16px;
-  line-height: 1.7;
-  padding: 28px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  /* cola no topo e acompanha o scroll */
-  position: sticky;
-  top: 130px; /* altura do header fixo */
-  align-self: start;
-  min-height: calc(100vh - 130px);
-  border-left: 2px solid rgba(244, 211, 94, 0.6);
+.store-bio {
+  background-color: rgba(244, 211, 94, 0.35);
+  border-bottom: 1px solid rgba(244, 211, 94, 0.6);
+  padding: 10px 24px;
+  text-align: center;
 }
 
-.store-about p {
-  font-size: 16px;
-  text-align: left;
+.store-bio p {
+  font-family: var(--font-family-body);
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  line-height: 1.4;
 }
 
 
@@ -550,7 +362,7 @@ body {
 .fa-whatsapp,
 .fa-instagram {
   font-family: var(--font-family-body);
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 2px;
 }
 
@@ -575,35 +387,6 @@ body {
    ============================================================ */
 
 @media (max-width: 480px) {
-  .page-main {
-    padding-inline: 16px;
-  }
-
-  .hero {
-    padding-inline: 16px;
-  }
-
-  .product-section {
-    margin-inline: -16px;
-    padding-inline: 16px;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Em mobile: sidebar vai pra baixo do grid */
-  .main-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .store-about {
-    position: static;
-    min-height: auto;
-    border-left: none;
-    border-top: 2px solid rgba(244, 211, 94, 0.6);
-  }
-
   /* Grid de roupas: 2 colunas fixas em mobile */
   .clothes-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -611,3 +394,41 @@ body {
     padding: 16px 8px;
   }
 }
+
+/* ============================================================
+   12. RESPONSIVO
+   ============================================================ */
+   .click-4-more {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 16px;
+   }
+
+   #all {
+    border: 1px solid var(--color-border);
+    border-radius: 40px;
+    background-color: var(--color-border);
+    font-family: var(--font-family-body);
+    font-size: 1.5rem; 
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 16px; 
+    box-sizing: border-box;
+   }
+
+   #all:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-secondary);
+    border-radius: 40px;
+    background-color: var(--color-secondary);
+    font-family: var(--font-family-body);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    text-align: center;
+    animation: pulse-grow var(--hover-duration, 0.5s) ease;
+    
+   }
+
