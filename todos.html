@@ -1,137 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ver Tudo</title>
-        <link rel="stylesheet" href="productsStyle.css">
-       
-        <!-- Google Fonts -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ver Tudo — RESTOK</title>
+    <link rel="stylesheet" href="productsStyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chango&family=Lilita+One&family=Roboto+Condensed:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    </head>
-    <body>
-         <!-- HEADER -->
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Lilita+One&display=swap" rel="stylesheet" />
+  </head>
+  <body>
     <header class="site-header">
       <div class="site-header-inner">
         <section class="pagetitle">
           <h1 id="restok-logo">RESTOK</h1>
         </section>
-
         <div class="search-group">
           Procurando algo específico?
           <input id="search-input" type="text" placeholder="Buscar:" />
           <button class="btn">
             <span class="btn-icon">
-              <svg width="11" height="11" fill="#F4D35E" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <svg width="11" height="11" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
               </svg>
             </span>
           </button>
         </div>
       </div>
-
-      
-
       <nav class="gen-nav" id="gen-nav">
         <ul id="gen-menu">
           <li class="has-sub">
             <a href="#produtos">Produtos <span class="gen-arrow">+</span></a>
             <ul>
-              <li><a href="blusas.html" target="_blank">Blusas</a></li>
-              <li><a href="croppeds.html" target="_blank">Croppeds</a></li>
-              <li><a href="vestidos.html" target="_blank">Vestidos</a></li>
-              <li><a href="calças.html" target="_blank">Calças</a> </li>
-              <li><a href="#casacos">Casacos</a> </li>
-              <li><a href="#jaquetas">Jaquetas</a> </li>
-              <li><a href="#ver-tudo">Ver tudo</a></li>
+              <li><a href="blusas.html">Blusas</a></li>
+              <li><a href="croppeds.html">Croppeds</a></li>
+              <li><a href="vestidos.html">Vestidos</a></li>
+              <li><a href="calças.html">Calças</a></li>
+              <li><a href="#casacos">Casacos</a></li>
+              <li><a href="#jaquetas">Jaquetas</a></li>
+              <li><a href="todos.html">Ver tudo</a></li>
             </ul>
           </li>
           <li class="has-sub">
             <a href="#contato">Contato <span class="gen-arrow">+</span></a>
             <ul>
-              <li>
-                <a href="https://wa.me/SEU_NUMERO" target="_blank" style="color:#25D366; font-size:16px; text-decoration:none;">
-                  <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com/SEU_PERFIL" target="_blank" style="color:#f56040; font-size:16px; text-decoration:none;">
-                  <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
-              </li>
+              <li><a href="https://wa.me/SEU_NUMERO" target="_blank" style="color:#25D366;font-size:16px;text-decoration:none;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+              <li><a href="https://instagram.com/SEU_PERFIL" target="_blank" style="color:#f56040;font-size:16px;text-decoration:none;"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
             </ul>
           </li>
         </ul>
       </nav>
-
     </header>
     <nav aria-label="Breadcrumb" class="breadcrumb">
-  <ol>
-    <li><a href="#">Início</a></li>
-    <li><span aria-current="page">Tudo</span></li>
-  </ol>
-</nav>
-<!-- GRID DE PEÇAS -->
-        <section class="clothes-grid" id="ver-tudo">
-         <div class="clothes-grid__item">
-            <img src="images/vestido-laranja-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Vestido Peahi · M · R$ 50</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/vestido-indiano-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Vestido Indiano · GG · R$ 45</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/vestido-moficer-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Vestido M. Officer · P · R$ 55</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/vestido-verde-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Vestido Aquamar · GG · R$ 40</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/vestido-preto-elastano-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Vestido Preto · G · R$ 20</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images\blusa-cigana-frente.jpg" alt="Blusa Decote Canoa" />
-            <span class="clothes-grid__caption">Blusa Decote Canoa · G · R$ 30 </span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/blusa-friends-frente-2.jpg" alt="Blusa Estampa Série Friends" />
-            <span class="clothes-grid__caption">Blusa Friends · M · R$ 25</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/blusa-veludo-azul-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Blusa Veludo · M · R$ 45</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/blusa-shein-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Blusa Shein · G · R$ 15</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/calça-jeans-mom-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Mom Jeans · 44 · R$ 45</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/cropped-laranja-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Cropped Cores · M · R$ 15</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/cropped-azul-frente.jpg" alt="Blusa Estampa Série Friends" />
-            <span class="clothes-grid__caption">Cropped Aquamar · M · R$ 15</span>
-          </div>
-          <div class="clothes-grid__item">
-            <img src="images/cropped-branco-frente.jpg" alt="Descrição da peça" />
-            <span class="clothes-grid__caption">Cropped Bluesteel · M · R$ 15</span>
-          </div>
-        </section>
+      <ol>
+        <li><a href="index.html">Início</a></li>
+        <li><span aria-current="page">Tudo</span></li>
+      </ol>
+    </nav>
 
-    </body>
+    <section class="clothes-grid">
+      <div class="clothes-grid__item">
+        <img src="images/vestido-laranja-frente.jpg" alt="Vestido Peahi" />
+        <span class="clothes-grid__caption">Vestido Peahi · M · R$ 50</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/vestido-indiano-frente.jpg" alt="Vestido Indiano" />
+        <span class="clothes-grid__caption">Vestido Indiano · GG · R$ 45</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/vestido-moficer-frente.jpg" alt="Vestido M. Officer" />
+        <span class="clothes-grid__caption">Vestido M. Officer · P · R$ 55</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/vestido-verde-frente.jpg" alt="Vestido Aquamar" />
+        <span class="clothes-grid__caption">Vestido Aquamar · GG · R$ 40</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/vestido-preto-elastano-frente.jpg" alt="Vestido Preto" />
+        <span class="clothes-grid__caption">Vestido Preto · G · R$ 20</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/blusa-cigana-frente.jpg" alt="Blusa Decote Canoa" />
+        <span class="clothes-grid__caption">Blusa Decote Canoa · G · R$ 30</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/blusa-friends-frente-2.jpg" alt="Blusa Friends" />
+        <span class="clothes-grid__caption">Blusa Friends · M · R$ 25</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/blusa-veludo-azul-frente.jpg" alt="Blusa Veludo" />
+        <span class="clothes-grid__caption">Blusa Veludo · M · R$ 45</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/blusa-shein-frente.jpg" alt="Blusa Shein" />
+        <span class="clothes-grid__caption">Blusa Shein · G · R$ 15</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/calça-jeans-mom-frente.jpg" alt="Mom Jeans" />
+        <span class="clothes-grid__caption">Mom Jeans · 44 · R$ 45</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/cropped-laranja-frente.jpg" alt="Cropped Cores" />
+        <span class="clothes-grid__caption">Cropped Cores · M · R$ 15</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/cropped-azul-frente.jpg" alt="Cropped Aquamar" />
+        <span class="clothes-grid__caption">Cropped Aquamar · M · R$ 15</span>
+      </div>
+      <div class="clothes-grid__item">
+        <img src="images/cropped-branco-frente.jpg" alt="Cropped Bluesteel" />
+        <span class="clothes-grid__caption">Cropped Bluesteel · M · R$ 15</span>
+      </div>
+    </section>
+  </body>
 </html>

@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
 /* ============================================================
-   SITE-B — STYLESHEET CONSOLIDADO
-   Ordem: Reset → Variáveis → Base → Header/Nav → Hero →
-          Produtos → Carrossel → Sobre → Footer
+   SITE-B — STYLESHEET SUBPÁGINAS DE PRODUTOS
    ============================================================ */
 
 
@@ -24,8 +22,7 @@
 *::-webkit-scrollbar-track { background: transparent; }
 *::-webkit-scrollbar-thumb { background: transparent; border: none; }
 
-ol,
-li {
+ol, li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -33,40 +30,29 @@ li {
 
 
 /* ============================================================
-   2. VARIÁVEIS (root.css)
+   2. VARIÁVEIS
    ============================================================ */
 
 :root {
   /* Colors */
-  --color-primary:        #0D3B66;
-  --color-secondary:      #F4D35E;
-  --color-background:     #FAF0CA;
-  --color-text:           #0D3B66;
-  --color-text-muted:     #0D3B66;
-  --color-border:         #0D3B66;
-  --color-border-subtle:  rgba(0, 0, 0, 0.15);
-  --color-h2-product:     #E3170A;
+  --color-primary:       #0D3B66;
+  --color-secondary:     #F4D35E;
+  --color-background:    #FAF0CA;
+  --color-text:          #0D3B66;
+  --color-border:        #0D3B66;
+  --color-border-subtle: rgba(0, 0, 0, 0.15);
 
   /* Typography */
   --font-family-heading: 'Chango', cursive;
   --font-family-body:    'Lilita One', cursive;
 
-  /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-
   /* Border radius */
-  --radius-sm: 6px;
   --radius-md: 12px;
-  --radius-lg: 18px;
 }
 
 
 /* ============================================================
-   3. BASE / BODY (style.css + header-nav.css)
+   3. BASE
    ============================================================ */
 
 body {
@@ -75,40 +61,12 @@ body {
   color: var(--color-text);
   min-height: 100vh;
   margin: 0;
-  padding: 0;
-  padding-top: 130px; /* espaço para o header fixo (logo ~76px + nav ~54px) */
-}
-
-/* Grid layout helper (style.css) */
-#cssportal-grid {
-  display: grid;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#div1 {
-  grid-area: 1 / 1 / 5 / 2;
-  background-color: rgba(193, 72, 109, 0.5);
-  background-image: url('.../images/teste-roupa.webp');
-  width: 100%;
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-}
-
-#div1-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  padding-top: 130px;
 }
 
 
 /* ============================================================
-   4. HEADER & NAVEGAÇÃO (header-nav.css)
+   4. HEADER & NAVEGAÇÃO
    ============================================================ */
 
 .site-header {
@@ -122,13 +80,11 @@ body {
   z-index: 1000;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* empilha: topo (logo + busca) e nav abaixo */
+  flex-direction: column;
 }
 
-/* Linha de cima: logo à esquerda, busca à direita */
 .site-header-inner {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 8px 20px;
@@ -138,7 +94,6 @@ body {
 .pagetitle {
   display: flex;
   align-items: center;
-  padding: inherit;
 }
 
 .pagetitle h1 {
@@ -155,7 +110,6 @@ body {
   animation: pulse-grow var(--hover-duration, 0.5s) ease;
 }
 
-/* Grupo de busca: texto + input + botão na mesma linha */
 .search-group {
   display: flex;
   align-items: center;
@@ -176,31 +130,18 @@ body {
   width: 180px;
 }
 
-/* Botão genérico */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   outline: none;
-  box-sizing: border-box;
   transition: all 0.2s;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  font-weight: normal;
+  padding: 10px 14px;
   color: var(--color-primary);
   background: var(--color-secondary);
   border-radius: 8px;
   border: none;
-  min-width: 20px;
-  min-height: 20px;
-}
-
-.btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn-icon svg {
@@ -210,30 +151,22 @@ body {
 }
 
 .btn:hover {
-  background: var(--color-secondary);
-  color: var(--color-primary);
   animation: pulse-grow var(--hover-duration, 0.5s) ease;
 }
+
 /* Navegação */
 .gen-nav {
-  position: static;
   display: flex;
   align-items: center;
   background: var(--color-primary);
   min-height: 54px;
-  box-shadow: none;
-  padding: 0 20px; /* mesmo padding lateral do site-header-inner */
+  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.gen-nav ul {
-  list-style: none;
-}
-
 .gen-nav > ul {
   display: flex;
-  justify-content: flex-start; /* alinha os itens à esquerda, igual ao logo */
   flex: 1;
   flex-wrap: wrap;
 }
@@ -297,7 +230,10 @@ body {
   color: var(--color-primary);
 }
 
-/*BREADCRUMBS*/
+
+/* ============================================================
+   5. BREADCRUMB
+   ============================================================ */
 
 .breadcrumb {
   padding: 0 0.5rem;
@@ -306,7 +242,6 @@ body {
 .breadcrumb ol {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
   margin: 20px;
   padding: 0;
   align-items: end;
@@ -327,15 +262,15 @@ body {
   display: inline-block;
   margin: 0 0.25rem;
   content: "/";
-  
 }
 
 .breadcrumb span {
   text-decoration: underline;
-} 
+}
+
 
 /* ============================================================
-   8. GRID DE IMAGENS (brechó)
+   6. GRID DE IMAGENS
    ============================================================ */
 
 .clothes-grid {
@@ -359,7 +294,6 @@ body {
 .clothes-grid__item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
-  
 }
 
 .clothes-grid__item img {
@@ -370,7 +304,9 @@ body {
   transition: transform 0.3s ease;
 }
 
-
+.clothes-grid__item:hover img {
+  transform: scale(1.04);
+}
 
 .clothes-grid__caption {
   position: absolute;
@@ -388,4 +324,27 @@ body {
 
 .clothes-grid__item:hover .clothes-grid__caption {
   transform: translateY(0);
+}
+
+
+/* ============================================================
+   7. ANIMAÇÕES
+   ============================================================ */
+
+@keyframes pulse-grow {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.1); }
+}
+
+
+/* ============================================================
+   8. RESPONSIVO
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .clothes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 16px 8px;
+  }
 }

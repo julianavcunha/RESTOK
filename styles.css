@@ -2,8 +2,6 @@
 
 /* ============================================================
    SITE-B — STYLESHEET CONSOLIDADO
-   Ordem: Reset → Variáveis → Base → Header/Nav → Hero →
-          Produtos → Carrossel → Sobre → Footer
    ============================================================ */
 
 
@@ -24,8 +22,7 @@
 *::-webkit-scrollbar-track { background: transparent; }
 *::-webkit-scrollbar-thumb { background: transparent; border: none; }
 
-ol,
-li {
+ol, li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -33,40 +30,30 @@ li {
 
 
 /* ============================================================
-   2. VARIÁVEIS (root.css)
+   2. VARIÁVEIS
    ============================================================ */
 
 :root {
   /* Colors */
-  --color-primary:        #0D3B66;
-  --color-secondary:      #F4D35E;
-  --color-background:     #FAF0CA;
-  --color-text:           #0D3B66;
-  --color-text-muted:     #0D3B66;
-  --color-border:         #0D3B66;
-  --color-border-subtle:  rgba(0, 0, 0, 0.15);
-  --color-h2-product:     #E3170A;
+  --color-primary:       #0D3B66;
+  --color-secondary:     #F4D35E;
+  --color-background:    #FAF0CA;
+  --color-text:          #0D3B66;
+  --color-border:        #0D3B66;
+  --color-border-subtle: rgba(0, 0, 0, 0.15);
 
   /* Typography */
   --font-family-heading: 'Chango', cursive;
   --font-family-body:    'Lilita One', cursive;
 
-  /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-
   /* Border radius */
-  --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 18px;
 }
 
 
 /* ============================================================
-   3. BASE / BODY (style.css + header-nav.css)
+   3. BASE
    ============================================================ */
 
 body {
@@ -75,14 +62,12 @@ body {
   color: var(--color-text);
   min-height: 100vh;
   margin: 0;
-  padding: 0;
-  padding-top: 130px; /* espaço para o header fixo (logo ~76px + nav ~54px) */
+  padding-top: 130px; /* espaço para o header fixo */
 }
 
 
-
 /* ============================================================
-   4. HEADER & NAVEGAÇÃO (header-nav.css)
+   4. HEADER & NAVEGAÇÃO
    ============================================================ */
 
 .site-header {
@@ -96,13 +81,11 @@ body {
   z-index: 1000;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* empilha: topo (logo + busca) e nav abaixo */
+  flex-direction: column;
 }
 
-/* Linha de cima: logo à esquerda, busca à direita */
 .site-header-inner {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 8px 20px;
@@ -112,7 +95,6 @@ body {
 .pagetitle {
   display: flex;
   align-items: center;
-  padding: 0;
 }
 
 .pagetitle h1 {
@@ -129,7 +111,6 @@ body {
   animation: pulse-grow var(--hover-duration, 0.5s) ease;
 }
 
-/* Grupo de busca: texto + input + botão na mesma linha */
 .search-group {
   display: flex;
   align-items: center;
@@ -150,31 +131,18 @@ body {
   width: 180px;
 }
 
-/* Botão genérico */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   outline: none;
-  box-sizing: border-box;
   transition: all 0.2s;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  font-weight: normal;
+  padding: 10px 14px;
   color: var(--color-primary);
   background: var(--color-secondary);
   border-radius: 8px;
   border: none;
-  min-width: 20px;
-  min-height: 20px;
-}
-
-.btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn-icon svg {
@@ -184,31 +152,22 @@ body {
 }
 
 .btn:hover {
-  background: var(--color-secondary);
-  color: var(--color-primary);
   animation: pulse-grow var(--hover-duration, 0.5s) ease;
 }
 
 /* Navegação */
 .gen-nav {
-  position: static;
   display: flex;
   align-items: center;
   background: var(--color-primary);
   min-height: 54px;
-  box-shadow: none;
-  padding: 0 20px; /* mesmo padding lateral do site-header-inner */
+  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.gen-nav ul {
-  list-style: none;
-}
-
 .gen-nav > ul {
   display: flex;
-  justify-content: flex-start; /* alinha os itens à esquerda, igual ao logo */
   flex: 1;
   flex-wrap: wrap;
 }
@@ -273,13 +232,8 @@ body {
 }
 
 
-
-
-
-
-
 /* ============================================================
-   8. GRID DE IMAGENS (brechó)
+   5. GRID DE IMAGENS
    ============================================================ */
 
 .clothes-grid {
@@ -303,7 +257,6 @@ body {
 .clothes-grid__item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
-  
 }
 
 .clothes-grid__item img {
@@ -314,17 +267,19 @@ body {
   transition: transform 0.3s ease;
 }
 
-
+.clothes-grid__item:hover img {
+  transform: scale(1.04);
+}
 
 .clothes-grid__caption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-primary);
+  background: linear-gradient(transparent, rgba(13, 59, 102, 0.82));
   color: var(--color-secondary);
   font-family: var(--font-family-body);
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 20px 12px 10px;
   transform: translateY(100%);
   transition: transform 0.25s ease;
@@ -334,44 +289,108 @@ body {
   transform: translateY(0);
 }
 
-
 /* ============================================================
-   9. BIO — faixa entre header e grid
+   6. HERO DA INDEX — exclusivo, não afeta outras páginas
    ============================================================ */
 
-.store-bio {
-  background-color: rgba(244, 211, 94, 0.35);
-  border-bottom: 1px solid rgba(244, 211, 94, 0.6);
-  padding: 10px 24px;
+body.home {
+  padding-top: 0;
+}
+
+.site-header.home-hero {
+  position: relative;
+  min-height: 50vh;
+  justify-content: space-between;
+}
+
+.home-hero .site-header-inner {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 40px 20px 20px;
+  gap: 24px;
+}
+
+.home-hero .pagetitle h1 {
+  font-size: clamp(72px, 14vw, 160px);
+  letter-spacing: 12px;
   text-align: center;
 }
 
-.store-bio p {
+.home-hero .search-group {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+.home-hero #search-input {
+  width: 280px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.hero-tagline {
+  font-family: var(--font-family-body);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--color-secondary);
+}
+
+.hero-sub {
   font-family: var(--font-family-body);
   font-size: 0.95rem;
+  color: rgba(244, 211, 94, 0.75);
+}
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 28px;
+  background: var(--color-secondary);
   color: var(--color-primary);
-  line-height: 1.4;
-}
-
-
-/* ============================================================
-   10. FOOTER (footer.css)
-   ============================================================ */
-
-.fa-whatsapp,
-.fa-instagram {
   font-family: var(--font-family-body);
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.fa-instagram a {
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-hidden {
+  
+  gap: 20px;
+  
+}
+
+.hero-hidden a {
+  display: inline-block;
+  visibility: hidden;
+  margin-top: 8px;
+  padding: 10px 28px;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  border-radius: 999px;
   text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 
 /* ============================================================
-   11. ANIMAÇÕES
+   7. ANIMAÇÕES
    ============================================================ */
 
 @keyframes pulse-grow {
@@ -380,54 +399,14 @@ body {
 }
 
 
-
 /* ============================================================
-   12. RESPONSIVO
+   8. RESPONSIVO
    ============================================================ */
 
 @media (max-width: 480px) {
-  /* Grid de roupas: 2 colunas fixas em mobile */
   .clothes-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     padding: 16px 8px;
   }
 }
-
-/* ============================================================
-   12. RESPONSIVO
-   ============================================================ */
-   .click-4-more {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 16px;
-   }
-
-   #all {
-    border: 1px solid var(--color-border);
-    border-radius: 40px;
-    background-color: var(--color-border);
-    font-family: var(--font-family-body);
-    font-size: 1.5rem; 
-    color: var(--color-secondary);
-    text-align: center;
-    padding: 16px; 
-    box-sizing: border-box;
-   }
-
-   #all:hover {
-    cursor: pointer;
-    border: 1px solid var(--color-secondary);
-    border-radius: 40px;
-    background-color: var(--color-secondary);
-    font-family: var(--font-family-body);
-    font-size: 1.5rem;
-    color: var(--color-text);
-    text-align: center;
-    animation: pulse-grow var(--hover-duration, 0.5s) ease;
-    
-   }
-
