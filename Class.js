@@ -1,30 +1,34 @@
 class Roupas {
-    constructor(tipo, tamanho, preço, marca, cor) {
-        this._tipo = tipo;
+    constructor(tamanho, preço, marca, cor) {
         this._tamanho = tamanho;
         this._preço = preço;
         this._marca = marca;
         this._cor = cor;
-    }
-    get tamanho() {
-        if (tamanho === 'p' || 'm' || 'g' || 'xg') {
-            return this._tamanho
-        }
-        else {
-            "tamanho único"
-        }
         
-    };
+    }
+
+    showPrice() {
+        return ('R$' + this._preço);
+    }
 
     get preço() {
-        return ('R$' + this._preço)
-    };
+        return this._preço;
+    }
+
 }
 
 class Vestidos extends Roupas {
-    constructor(tamanho, preço, marca, cor, comprimento) {
+    constructor(tamanho, preço, marca, cor, comprimento) { //medidas!
         super(tamanho, preço, marca, cor);
         this._comprimento = comprimento;
+    }
+
+    showCm() {
+        return (this._comprimento + 'cm');
+    }
+
+    get comprimento() {
+        return this._comprimento;
     }
 }
 
@@ -35,22 +39,47 @@ class Calças extends Roupas {
 }
 
 class Blusas extends Roupas {
-    constructor(tipo, tamanho, preço, marca, cor) {
-        super(tipo, tamanho, preço, marca, cor);
+    constructor(tamanho, preço, marca, cor) {
+        super(tamanho, preço, marca, cor);
+    }
+}
+
+class Croppeds extends Roupas {
+    constructor(tamanho, preço, marca, cor) {
+        super(tamanho, preço, marca, cor); 
     }
 }
 
 class Casacos extends Roupas {
-    constructor(tipo, tamanho, preço, marca, cor) {
-        super(tipo, tamanho, preço, marca, cor);
+    constructor(tamanho, preço, marca, cor, tipo) {
+        super(tamanho, preço, marca, cor);
     }
 }
 
 class Jaquetas extends Roupas {
-    constructor(tipo, tamanho, preço, marca, cor) {
-        super(tipo, tamanho, preço, marca, cor);
+    constructor(tamanho, preço, marca, cor, tipo) {
+        super(tamanho, preço, marca, cor);
     }
 }
 
-const vestidoLaranja = new Vestidos ('m', 50, 'Peahi', 'laranja', 'médio');
-console.log(vestidoLaranja);
+const vestidoLaranja = new Vestidos ("M", 50, "Peahi", "Laranja", "Curto"); //pg inicial
+const vestidoVerde = new Vestidos ("GG", 40, "Aquamar", "Verde", "Curto"); //pg inicial
+const vestidoOficer = new Vestidos ("P", 55, "M. Officer", "Azul Marinho", "Curto"); //pg inicial
+const vestidoForever = new Vestidos ("GG", 30, "Forever 21", "Preto", "Curto"); 
+const vestidoPreto = new Vestidos ("G", 20, "Sem Marca", "Preto", "Curto"); 
+const vestidoIndiano = new Vestidos ("GG", 20, "Mahamaya Fashion", "Azul", "Curto"); //pg inicial
+
+const blusaFriends = new Blusas ("M", 25, "Renner", "Branca"); //pg inicial
+const blusaShein = new Blusas ("G", 15, "Shein", "Branca"); //pg inicial
+const blusaVeludo = new Blusas ("M", 45, "C&A", "Azul"); //pg inicial
+const blusaCanoa = new Blusas ("G", 30, "Renner", "Vermelha"); //pg inicial
+
+const cropBranco = new Croppeds ("M", 15, "Bluesteel", "Branco"); 
+const cropAzul = new Croppeds ("M", 15, "Aquamar", "Azul"); 
+const cropLaranja = new Croppeds ("M", 15, "Renner", "Branco"); //pg inicial
+
+const blueJeans = new Calças ("44", 45, "C&A", "Azul"); //pg inicial
+
+console.log(Roupas);
+
+
