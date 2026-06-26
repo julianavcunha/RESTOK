@@ -103,6 +103,12 @@ body {
   color: var(--color-secondary);
   line-height: 1;
   white-space: nowrap;
+  src: url(index.html);
+}
+
+.pagetitle h1 a {
+  text-decoration: none;
+  color: var(--color-secondary);
 }
 
 .pagetitle h1:hover {
