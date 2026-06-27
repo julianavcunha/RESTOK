@@ -62,24 +62,43 @@ class Jaquetas extends Roupas {
     }
 }
 
-const vestidoLaranja = new Vestidos ("M", 50, "Peahi", "Laranja", "Curto"); //pg inicial
-const vestidoVerde = new Vestidos ("GG", 40, "Aquamar", "Verde", "Curto"); //pg inicial
-const vestidoOficer = new Vestidos ("P", 55, "M. Officer", "Azul Marinho", "Curto"); //pg inicial
+const vestidoLaranja = new Vestidos ("M", 50, "Peahi", "Laranja", "Curto"); 
+const vestidoVerde = new Vestidos ("GG", 40, "Aquamar", "Verde", "Curto"); 
+const vestidoOficer = new Vestidos ("P", 55, "M. Officer", "Azul Marinho", "Curto"); 
 const vestidoForever = new Vestidos ("GG", 30, "Forever 21", "Preto", "Curto"); 
 const vestidoPreto = new Vestidos ("G", 20, "Sem Marca", "Preto", "Curto"); 
-const vestidoIndiano = new Vestidos ("GG", 20, "Mahamaya Fashion", "Azul", "Curto"); //pg inicial
+const vestidoIndiano = new Vestidos ("GG", 20, "Mahamaya Fashion", "Azul", "Curto"); 
 
-const blusaFriends = new Blusas ("M", 25, "Renner", "Branca"); //pg inicial
-const blusaShein = new Blusas ("G", 15, "Shein", "Branca"); //pg inicial
-const blusaVeludo = new Blusas ("M", 45, "C&A", "Azul"); //pg inicial
-const blusaCanoa = new Blusas ("G", 30, "Renner", "Vermelha"); //pg inicial
+const blusaFriends = new Blusas ("M", 25, "Renner", "Branca"); 
+const blusaShein = new Blusas ("G", 15, "Shein", "Branca"); 
+const blusaVeludo = new Blusas ("M", 45, "C&A", "Azul"); 
+const blusaCanoa = new Blusas ("G", 30, "Renner", "Vermelha"); 
 
 const cropBranco = new Croppeds ("M", 15, "Bluesteel", "Branco"); 
 const cropAzul = new Croppeds ("M", 15, "Aquamar", "Azul"); 
-const cropLaranja = new Croppeds ("M", 15, "Renner", "Branco"); //pg inicial
+const cropLaranja = new Croppeds ("M", 15, "Renner", "Branco"); 
 
-const blueJeans = new Calças ("44", 45, "C&A", "Azul"); //pg inicial
+const blueJeans = new Calças ("44", 45, "C&A", "Azul"); 
 
 console.log(Roupas);
+
+export default class Roupas {
+    constructor(tamanho, preço, marca, cor) {
+        this._tamanho = tamanho;
+        this._preço = preço;
+        this._marca = marca;
+        this._cor = cor;
+        
+    }
+
+    showPrice() {
+        return ('R$' + this._preço);
+    }
+
+    get preço() {
+        return this._preço;
+    }
+
+}
 
 
