@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blusa Friends — RESTOK</title>
-    <link rel="stylesheet" href="productsStyle.css" />
-    <link rel="stylesheet" href="blusafriends.css" />
+    <title>Vestido Preto — RESTOK</title>
+    <link rel="stylesheet" href="../productsStyle.css" />
+    <link rel="stylesheet" href="../blusafriends.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Lilita+One&display=swap" rel="stylesheet" />
@@ -13,11 +13,11 @@
   </head>
   <body>
 
-    <!-- HEADER (igual às outras páginas) -->
+    <!-- HEADER -->
     <header class="site-header">
       <div class="site-header-inner">
         <section class="pagetitle">
-          <h1 id="restok-logo"><a href="index.html"> RESTOK </a></h1>
+          <h1 id="restok-logo"><a href="../index.html"> RESTOK </a></h1>
         </section>
       </div>
       <nav class="gen-nav" id="gen-nav">
@@ -25,11 +25,11 @@
           <li class="has-sub">
             <a href="#produtos">Produtos <span class="gen-arrow">+</span></a>
             <ul>
-              <li><a href="blusas.html">Blusas</a></li>
-              <li><a href="croppeds.html">Croppeds</a></li>
-              <li><a href="vestidos.html">Vestidos</a></li>
-              <li><a href="calças.html">Calças</a></li>
-              <li><a href="todos.html">Ver tudo</a></li>
+              <li><a href="../blusas.html">Blusas</a></li>
+              <li><a href="../croppeds.html">Croppeds</a></li>
+              <li><a href="../vestidos.html">Vestidos</a></li>
+              <li><a href="../calças.html">Calças</a></li>
+              <li><a href="../todos.html">Ver tudo</a></li>
             </ul>
           </li>
           <li class="has-sub">
@@ -46,9 +46,9 @@
     <!-- BREADCRUMB -->
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="blusas.html">Blusas</a></li>
-        <li><span aria-current="page">Blusa Friends</span></li>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../vestidos.html">Vestidos</a></li>
+        <li><span aria-current="page">Vestido Preto</span></li>
       </ol>
     </nav>
 
@@ -62,29 +62,16 @@
         <div class="gallery-main">
           <img
             id="gallery-main-img"
-            src="images/blusa-friends-frente-2.jpg"
-            alt="Blusa Friends — frente"
+            src="../images/vestido-preto-elastano-frente.jpg"
+            alt="Vestido Preto — frente"
           />
         </div>
 
         <!-- Miniaturas -->
         <div class="gallery-thumbs">
-          <button class="thumb active" onclick="trocarFoto(this, 'images/blusa-friends-frente.jpg', 'Blusa Friends - frente')">
-            <img src="images/blusa-friends-frente.jpg" alt="Frente" />
+          <button class="thumb active" onclick="trocarFoto(this, '../images/vestido-preto-elastano-frente.jpg', 'Vestido Preto - frente')">
+            <img src="../images/vestido-preto-elastano-frente.jpg" alt="Frente" />
           </button>
-          <button class="thumb active" onclick="trocarFoto(this, 'images/blusa-friends-frente-2.jpg', 'Blusa Friends — frente2')">
-            <img src="images/blusa-friends-frente-2.jpg" alt="Frente2" />
-          </button>
-          <button class="thumb" onclick="trocarFoto(this, 'images/blusa-friends-costas.jpg', 'Blusa Friends — costas')">
-            <img src="images/blusa-friends-costas.jpg" alt="Costas" />
-          </button>
-          <button class="thumb" onclick="trocarFoto(this, 'images/blusa-friends-avaria.jpg', 'Blusa Friends — avaria')">
-            <img src="images/blusa-friends-avaria.jpg" alt="Avaria" />
-          </button>
-          <button class="thumb" onclick="trocarFoto(this, 'images/blusa-friends-avaria-2.jpg', 'Blusa Friends - avaria2')">
-            <img src="images/blusa-friends-avaria-2.jpg" alt="Avaria2" />
-          </button>
-          
         </div>
 
       </section>
@@ -92,19 +79,19 @@
       <!-- DADOS DO PRODUTO -->
       <section class="product-info">
 
-        <h1 class="product-name">Blusa Friends</h1>
-        <p class="product-price">R$ 25</p>
+        <h1 class="product-name">Vestido Preto</h1>
+        <p class="product-price">R$ 20</p>
 
         <div class="product-tags">
-          <span class="tag">Blusa</span>
-          <span class="tag">Tamanho M</span>
-          <span class="tag">Estampa</span>
+          <span class="tag">Vestido</span>
+          <span class="tag">Tamanho G</span>
+          <span class="tag">Preto</span>
         </div>
 
         <div class="product-details">
           <div class="detail-row">
             <span class="detail-label">Tamanho</span>
-            <span class="detail-value">M</span>
+            <span class="detail-value">G</span>
           </div>
           <div class="detail-row">
             <span class="detail-label">Marca</span>
@@ -112,23 +99,22 @@
           </div>
           <div class="detail-row">
             <span class="detail-label">Cor</span>
-            <span class="detail-value">Branca</span>
+            <span class="detail-value">Preto</span>
           </div>
           <div class="detail-row">
             <span class="detail-label">Estado</span>
             <span class="detail-value">Seminova</span>
           </div>
           <div class="detail-row">
-            <span class="detail-label">Tecido</span>
-            <span class="detail-value">Malha</span>
+            <span class="detail-label">Comprimento</span>
+            <span class="detail-value">Curto</span>
           </div>
         </div>
 
         <div class="product-description">
           <h2>Sobre a peça</h2>
           <p>
-            Blusa com estampa da série Friends, manga curta, decote redondo.
-            Contém sinais de uso na gola (destacados nas imagens). Lavada e pronta para um novo lar! 
+            Descrição do vestido aqui. Inclua informações sobre o tecido, estado, e qualquer detalhe especial sobre a peça.
           </p>
           <p class="intro-button">Tem interesse nessa peça? Clique no botão abaixo para comprar via DM (pagamentos via PIX)!</p>
         </div>
@@ -148,10 +134,8 @@
 
     <script>
       function trocarFoto(thumb, src, alt) {
-        // atualiza foto principal
         document.getElementById('gallery-main-img').src = src;
         document.getElementById('gallery-main-img').alt = alt;
-        // marca miniatura ativa
         document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
         thumb.classList.add('active');
       }

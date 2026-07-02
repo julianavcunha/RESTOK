@@ -83,3 +83,6 @@ const blueJeans = new Calças ("44", 45, "C&A", "Azul");
 export default Roupas;
 
 
+//The Class.js file exports ES6 modules but is loaded as a regular script. 
+// Since it's not being actively used on the pages, this doesn't affect functionality. 
+// If you plan to use these classes in the future, add type="module" to the script tag in your HTML files.//

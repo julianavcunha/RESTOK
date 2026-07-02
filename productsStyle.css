@@ -251,6 +251,10 @@ body {
   cursor: pointer;
   aspect-ratio: 3 / 4;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
 }
 
 .clothes-grid__item:hover {
