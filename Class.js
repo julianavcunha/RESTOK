@@ -78,27 +78,8 @@ const cropBranco = new Croppeds ("M", 15, "Bluesteel", "Branco");
 const cropAzul = new Croppeds ("M", 15, "Aquamar", "Azul"); 
 const cropLaranja = new Croppeds ("M", 15, "Renner", "Branco"); 
 
-const blueJeans = new Calças ("44", 45, "C&A", "Azul"); 
+const blueJeans = new Calças ("44", 45, "C&A", "Azul");
 
-console.log(Roupas);
-
-export default class Roupas {
-    constructor(tamanho, preço, marca, cor) {
-        this._tamanho = tamanho;
-        this._preço = preço;
-        this._marca = marca;
-        this._cor = cor;
-        
-    }
-
-    showPrice() {
-        return ('R$' + this._preço);
-    }
-
-    get preço() {
-        return this._preço;
-    }
-
-}
+export default Roupas;
 
 

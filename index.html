@@ -7,13 +7,26 @@
 
     <link rel="stylesheet" href="styles.css" />
     <script src="Class.js"></script>
-    <script src="Search.js"></script>
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <style>
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--color-secondary);
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px 12px;
+      }
+      @media (max-width: 768px) {
+        .hamburger { display: block; }
+      }
+    </style>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,19 +45,6 @@
           <h1 id="restok-logo">RESTOK</h1>
         </section>
 
-        <div class="search-group">
-          Procurando algo específico?
-          <input id="search-input" type="text" placeholder="Buscar:" />
-          <button class="btn">
-            <span class="btn-icon">
-              <svg width="11" height="11" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
-              </svg>
-            </span>
-          </button>
-        </div>
-      </div>
-
       <!-- HERO CONTENT: só aparece na index -->
       <div class="hero-content">
         <p class="hero-tagline">Do meu armário para o seu &#9825;</p>
@@ -62,15 +62,14 @@
         <p>
           Quer entrar em contato?
         </p>
+        <div>
           <a href="https://wa.me/5521998706015" target="_blank" style="color:#25D366; font-size:16px; text-decoration:none;">
-              <i class="fa-brands fa-whatsapp">
-
-              </i> Whatsapp <!-- COLOCAR MENSAGEM TIPO "OI, VIM DO SITE DA RESTOK!" -->
-          
-              <a href="https://instagram.com/restokbrecho" target="_blank" style="color:#f56040; font-size:16px; text-decoration:none;">
-              <i class="fa-brands fa-instagram">
-
-              </i> Instagram
+            <i class="fa-brands fa-whatsapp"></i> Whatsapp
+          </a>
+          <a href="https://instagram.com/restokbrecho" target="_blank" style="color:#f56040; font-size:16px; text-decoration:none;">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
       </div>
     
     

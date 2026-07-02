@@ -116,50 +116,6 @@ body {
   animation: pulse-grow var(--hover-duration, 0.5s) ease;
 }
 
-.search-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-secondary);
-  font-family: var(--font-family-body);
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-#search-input {
-  border: 2px solid var(--color-secondary);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 0.95rem;
-  background: var(--color-background);
-  color: var(--color-primary);
-  width: 180px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s;
-  padding: 10px 14px;
-  color: var(--color-primary);
-  background: var(--color-secondary);
-  border-radius: 8px;
-  border: none;
-}
-
-.btn-icon svg {
-  width: 11px;
-  height: 11px;
-  fill: var(--color-primary);
-}
-
-.btn:hover {
-  animation: pulse-grow var(--hover-duration, 0.5s) ease;
-}
-
 /* Navegação */
 .gen-nav {
   display: flex;
@@ -344,13 +300,187 @@ body {
 
 
 /* ============================================================
-   8. RESPONSIVO
+   8. RESPONSIVO - MOBILE FIRST
    ============================================================ */
 
+/* Tablets (768px to 1024px) */
+@media (max-width: 1024px) {
+  body {
+    padding-top: 120px;
+  }
+
+  .pagetitle h1 {
+    font-size: 40px;
+    letter-spacing: 4px;
+  }
+
+  .gen-nav > ul > li > a {
+    padding: 0 12px;
+    font-size: 1.1rem;
+  }
+
+  .clothes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 20px 12px;
+  }
+
+  .breadcrumb ol {
+    margin: 16px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets/Small Screens (480px to 768px) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 110px;
+  }
+
+  .site-header-inner {
+    padding: 12px 14px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pagetitle h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .gen-nav {
+    padding: 0 12px;
+    min-height: 48px;
+    overflow-x: auto;
+  }
+
+  .gen-nav > ul {
+    gap: 0;
+  }
+
+  .gen-nav > ul > li > a {
+    padding: 0 10px;
+    height: 48px;
+    font-size: 0.95rem;
+  }
+
+  .gen-nav > ul > li > ul {
+    min-width: 140px;
+  }
+
+  .gen-nav > ul > li > ul > li > a {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .clothes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 16px 8px;
+  }
+
+  .breadcrumb {
+    padding: 0 8px;
+  }
+
+  .breadcrumb ol {
+    margin: 12px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile (max 480px) */
 @media (max-width: 480px) {
+  body {
+    padding-top: 90px;
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .site-header-inner {
+    padding: 10px 10px;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .pagetitle h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .search-group {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.8rem;
+    order: 3;
+    padding: 8px 10px;
+  }
+
+  #search-input {
+    width: calc(100% - 50px);
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .
+  .gen-nav > ul > li > a {
+    padding: 0 8px;
+    height: 44px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .gen-arrow {
+    font-size: 0.6em;
+  }
+
+  .gen-nav > ul > li > ul {
+    min-width: 120px;
+  }
+
+  .gen-nav > ul > li > ul > li > a {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb {
+    padding: 0 6px;
+  }
+
+  .breadcrumb ol {
+    margin: 8px;
+    font-size: 12px;
+    gap: 0;
+  }
+
+  .breadcrumb ol li:not(:last-child)::after {
+    margin: 0 0.15rem;
+  }
+
   .clothes-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    padding: 16px 8px;
+    padding: 12px 6px;
+  }
+
+  .clothes-grid__item {
+    border-radius: 8px;
+  }
+
+  .clothes-grid__caption {
+    font-size: 0.8rem;
+    padding: 16px 10px 8px;
+  }
+
+  /* Remove image scale on mobile for better performance */
+  .clothes-grid__item:hover img {
+    transform: none;
   }
 }
